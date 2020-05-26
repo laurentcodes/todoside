@@ -1,0 +1,23 @@
+{
+	"name": "todoside",
+	"version": "1.0.0",
+	"description": "A Todo App",
+	"main": "index.js",
+	"scripts": {
+		"build:css": "tailwind build src/style.css -o dist/style.css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/laurentcodes/todoside.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/laurentcodes/todoside/issues"
+	},
+	"homepage": "https://github.com/laurentcodes/todoside#readme",
+	"dependencies": {
+		"tailwindcss": "^1.4.6"
+	}
+}
