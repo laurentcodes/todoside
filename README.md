@@ -1,5 +1,3 @@
 # TodoSide
 
-## A Todo App
-
-## Need to push
+## A Beautiful Todo App
