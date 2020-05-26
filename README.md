@@ -1,2 +1,0 @@
-# todoside
-A Todo App
