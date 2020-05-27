@@ -3,10 +3,61 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+			integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+			crossorigin="anonymous"
+		/>
 		<link rel="stylesheet" href="style.css" />
-		<title>Document</title>
+		<title>TodoSide</title>
 	</head>
 	<body>
+		<div class="container">
+			<div class="logo-text">
+				<h2>Todo <span>Side</span></h2>
+			</div>
+
+			<div class="app">
+				<div class="todo-head">
+					<h2>Today's Todos</h2>
+				</div>
+
+				<div class="todos">
+					<div class="add-todo" id="add-todo">
+						<i class="fas fa-plus"></i>
+						<h3>New Todo</h3>
+					</div>
+					<ul>
+						<li>Welcome to TodoSide. 📝 <i class="fas fa-trash-alt"></i></li>
+						<li>
+							Click New Todo to add a new Todo. ➕
+							<i class="fas fa-trash-alt"></i>
+						</li>
+						<li>
+							Hover on a todo to show the delete button. 🚮
+							<i class="fas fa-trash-alt"></i>
+						</li>
+						<li>
+							Click on a button to mark it as completed. ✅
+							<i class="fas fa-trash-alt"></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="new-todo" id="new-todo-input">
+				<input type="text" placeholder="Enter Todo here" />
+				<i class="fas fa-arrow-alt-circle-right" id="submit-todo"></i>
+			</div>
+
+			<footer class="footer" id="footer">
+				<p>
+					TodoSide - 2020, made with ♥ by
+					<a href="https://laurentcodes.xyz" target="blank">Laurent</a>
+				</p>
+			</footer>
+		</div>
 		<script src="script.js"></script>
 	</body>
 </html>
