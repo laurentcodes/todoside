@@ -4,7 +4,8 @@
 	"start_url": "./index.html",
 	"display": "standalone",
 	"background_color": "#f8f5e6",
-	"theme_color": "#171d4b",
+	"description": "A Todo App",
+	"theme_color": "#f8f5e6",
 	"orientation": "portrait-primary",
 	"icons": [
 		{
