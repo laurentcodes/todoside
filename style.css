@@ -237,7 +237,7 @@ body {
 	}
 }
 
-@media (max-width: 1200px) and (min-width: 600px) {
+@media (max-width: 1200px) and (min-width: 900px) {
 	.container .app {
 		min-width: 90%;
 	}
@@ -266,6 +266,43 @@ body {
 
 	.new-todo input {
 		width: 80%;
+	}
+
+	.new-todo i {
+		top: 25px;
+		left: 84%;
+	}
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+	.container .app {
+		min-width: 90%;
+	}
+
+	.container .app .todo-head {
+		width: 90%;
+	}
+
+	.container .app .todos {
+		width: 90%;
+		padding: 15px;
+	}
+
+	.container .app .todos .add-todo {
+		left: 60%;
+	}
+
+	.container .app .todos ul li i {
+		opacity: 1;
+		right: 5px;
+	}
+
+	.new-todo {
+		width: 80%;
+	}
+
+	.new-todo input {
+		width: 90%;
 	}
 
 	.new-todo i {
