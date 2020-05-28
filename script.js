@@ -16,7 +16,7 @@ function checkLocalStorage() {
 			'Welcome to TodoSide. 📝',
 			'Click New Todo to add a new Todo. ➕',
 			'Hover on a todo to show the delete button. 🚮',
-			'Click on a button to mark it as completed. ✅',
+			'Click on an item to mark it as completed. ✅',
 		];
 
 		// Update DOM with dummy data
