@@ -44,6 +44,12 @@
 			"density": "2.0"
 		},
 		{
+			"src": "/assets/android-icon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"density": "2.0"
+		},
+		{
 			"src": "/assets/apple-icon-57x57.png",
 			"sizes": "57x57",
 			"type": "image/png",
@@ -94,6 +100,12 @@
 		{
 			"src": "/assets/apple-icon-180x180.png",
 			"sizes": "180x180",
+			"type": "image/png",
+			"density": "2.0"
+		},
+		{
+			"src": "/assets/apple-icon-512x512.png",
+			"sizes": "512x512",
 			"type": "image/png",
 			"density": "2.0"
 		},
