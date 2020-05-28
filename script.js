@@ -9,6 +9,7 @@ let todosData = JSON.parse(localStorage.getItem('todoSideTodos'));
 // Check if there's data in the localstorage and display if there is
 function checkLocalStorage() {
 	if ('todoSideTodos' in localStorage) {
+		localStorage.removeItem('todoSideTodos');
 		updateDOM(todosData);
 	} else {
 		// If no data, display dummy data/welcome page
@@ -96,8 +97,6 @@ todos.addEventListener('click', (e) => {
 		for (let i = 0; i < todosData.length; i++) {
 			if (todosData[i] === el.innerText) {
 				todosData.splice(i, 1);
-
-				console.log(todosData);
 
 				// Update local storage
 				localStorage.removeItem('todoSideTodos');
