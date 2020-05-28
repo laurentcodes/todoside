@@ -37,6 +37,21 @@ body {
 	font-size: 18px;
 }
 
+.container .link a {
+	text-decoration: none;
+	color: var(--secondary-color);
+	transition: color 0.3s ease-in-out;
+}
+
+.container .link a:hover {
+	color: var(--tertiary-color);
+}
+
+.container .link i {
+	font-size: 23px;
+	margin-right: 5px;
+}
+
 .container .logo-text span {
 	color: var(--tertiary-color);
 }
