@@ -2,10 +2,10 @@ const staticCacheName = 'site-static-v1';
 const assets = [
 	'/',
 	'/index.html',
-	'/assets/js/ui.js',
-	'/assets/css/main.css',
-	'/assets/images/background-home.jpg',
-	'https://fonts.googleapis.com/css?family=Lato:300,400,700',
+	'/assets/',
+	'/assets/style.css',
+	'/script.js',
+	'https://fonts.googleapis.com/css2?family=Rubik&display=swap',
 ];
 // install event
 self.addEventListener('install', (evt) => {
