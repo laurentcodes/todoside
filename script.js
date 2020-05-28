@@ -96,11 +96,11 @@ todos.addEventListener('click', (e) => {
 		for (let i = 0; i < todosData.length; i++) {
 			if (todosData[i] === el.innerText) {
 				todosData.splice(i, 1);
+
+				// Update local storage
+				localStorage.setItem('todoSideTodos', JSON.stringify(todosData));
 			}
 		}
-
-		// Update local storage
-		localStorage.setItem('todoSideTodos', JSON.stringify(todosData));
 
 		// Remove dummy data whenever a new data is added
 		setTimeout(function () {
