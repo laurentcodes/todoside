@@ -90,19 +90,22 @@ todos.addEventListener('click', (e) => {
 	// If the delete button is clicked
 	if (e.target && e.target.matches('i')) {
 		const el = e.target.parentElement;
-		el.style.opacity = '0';
+		// el.style.opacity = '0';
 
 		// Check if element selected is in the array and delete if found
 		for (let i = 0; i < todosData.length; i++) {
 			if (todosData[i] === el.innerText) {
 				todosData.splice(i, 1);
 
+				console.log(todosData);
+
 				// Update local storage
+				localStorage.removeItem('todoSideTodos');
 				localStorage.setItem('todoSideTodos', JSON.stringify(todosData));
 			}
 		}
 
-		// Remove dummy data whenever a new data is added
+		// Remove todo from DOM
 		setTimeout(function () {
 			el.remove();
 		}, 300);
@@ -117,3 +120,4 @@ document.addEventListener('mouseup', (e) => {
 });
 
 checkLocalStorage();
+console.log(todosData);
