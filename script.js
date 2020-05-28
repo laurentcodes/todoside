@@ -49,7 +49,7 @@ addTodo.addEventListener('click', () => {
 // Save todo to storage and display in DOM
 submitTodo.addEventListener('click', (e) => {
 	const parent = e.target.parentElement;
-	let todoItem = parent.children[0].value;
+	let todoItem = parent.children[2].value;
 
 	const todo = `
   <li>
@@ -69,7 +69,7 @@ submitTodo.addEventListener('click', (e) => {
 	todoInput.style.transition = 'all 0.3s ease-in-out;';
 	todoInput.classList.remove('show');
 
-	parent.children[0].value = '';
+	parent.children[2].value = '';
 
 	// Call checkLocalStorage function after adding new Data
 	setTimeout(checkLocalStorage, 1000);
