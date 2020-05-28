@@ -42,7 +42,7 @@ body {
 }
 
 .container .app .todo-head {
-	width: 60%;
+	width: 80%;
 	height: 60px;
 	background-color: #171d4b;
 }
@@ -56,7 +56,7 @@ body {
 .container .app .todos {
 	position: relative;
 	background-color: #171d4b;
-	width: 60%;
+	width: 80%;
 	margin-top: 40px;
 	padding: 25px;
 	color: #f8f5e6;
@@ -70,7 +70,7 @@ body {
 	position: absolute;
 	cursor: pointer;
 	top: -25px;
-	left: 50%;
+	left: 60%;
 	width: 200px;
 	height: 50px;
 	background-color: #2ed3c6;
@@ -94,6 +94,15 @@ body {
 	list-style: none;
 	font-size: 20px;
 	margin-left: 20px;
+
+	opacity: 1;
+	-webkit-transition: opacity 1000ms linear;
+	transition: opacity 1000ms linear;
+}
+
+.container .app .todos ul li.completed {
+	text-decoration: line-through;
+	color: #b6b6b6;
 }
 
 .container .app .todos ul li i {
@@ -119,6 +128,7 @@ body {
 	justify-content: center;
 	bottom: 0;
 	background-color: #171d48;
+	margin-top: 10px;
 	width: 100%;
 	height: 40px;
 	/* text-align: center; */
@@ -141,18 +151,24 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	bottom: 25px;
-	width: 100%;
-
-	visibility: hidden;
+	bottom: 0;
 	opacity: 0;
+	width: 40%;
+	height: 60px;
+	padding-top: 5px;
+	background-color: #38428bd3;
+	transition: all 0.3s ease-in-out;
+}
 
-	transition: visibility 0s, opacity 0.5s linear;
+.new-todo.show {
+	bottom: 0;
+	opacity: 1;
+	transform: translateY(-0px);
 }
 
 .new-todo input {
-	padding: 15px;
-	width: 40%;
+	padding: 10px;
+	width: 80%;
 	border: 2px solid #171d4b;
 	transition: border 0.3s ease-in-out;
 }
@@ -166,8 +182,8 @@ body {
 	cursor: pointer;
 	position: absolute;
 	font-size: 20px;
-	top: 15px;
-	left: 67%;
+	top: 25px;
+	left: 84%;
 	transition: color 0.3s ease;
 }
 
@@ -175,13 +191,17 @@ body {
 	color: #2ed3c6;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) and (min-width: 400px) {
+	.container .app {
+		min-width: 90%;
+	}
+
 	.container .app .todo-head {
-		width: 90%;
+		width: 100%;
 	}
 
 	.container .app .todos {
-		width: 90%;
+		width: 100%;
 		padding: 15px;
 	}
 
@@ -197,13 +217,50 @@ body {
 		font-size: 18px;
 	}
 
+	.container .app .todos ul li i {
+		opacity: 1;
+		right: 0;
+	}
+
+	.new-todo {
+		width: 80%;
+	}
+
 	.new-todo input {
 		padding: 10px;
 		width: 80%;
 	}
 
 	.new-todo i {
-		top: 10px;
+		top: 25px;
 		left: 83%;
+	}
+}
+
+@media (max-width: 1200px) and (min-width: 600px) {
+	.container .app .todo-head {
+		width: 90%;
+	}
+
+	.container .app .todos {
+		width: 90%;
+		padding: 15px;
+	}
+
+	.container .app .todos .add-todo {
+		left: 60%;
+	}
+
+	.new-todo {
+		width: 50%;
+	}
+
+	.new-todo input {
+		width: 80%;
+	}
+
+	.new-todo i {
+		top: 25px;
+		left: 84%;
 	}
 }
