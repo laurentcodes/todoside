@@ -7,20 +7,24 @@ const close = document.getElementById('close');
 
 let todosData = JSON.parse(localStorage.getItem('todoSideTodos'));
 
+// Dummy data
+dummyData = [
+	'Welcome to TodoSide. 📝',
+	'Click New Todo to add a new Todo. ➕',
+	'Hover on a todo to show the delete button. 🚮',
+	'Click on an item to mark it as completed. ✅',
+];
+
 // Check if there's data in the localstorage and display if there is
 function checkLocalStorage() {
 	if ('todoSideTodos' in localStorage) {
-		localStorage.removeItem('todoSideTodos');
-		updateDOM(todosData);
+		if (todosData.length > 0) {
+			updateDOM(todosData);
+		} else {
+			// Update DOM with dummy data
+			updateDOM(dummyData);
+		}
 	} else {
-		// If no data, display dummy data/welcome page
-		dummyData = [
-			'Welcome to TodoSide. 📝',
-			'Click New Todo to add a new Todo. ➕',
-			'Hover on a todo to show the delete button. 🚮',
-			'Click on an item to mark it as completed. ✅',
-		];
-
 		// Update DOM with dummy data
 		updateDOM(dummyData);
 
@@ -102,6 +106,7 @@ todos.addEventListener('click', (e) => {
 				// Update local storage
 				localStorage.removeItem('todoSideTodos');
 				localStorage.setItem('todoSideTodos', JSON.stringify(todosData));
+				setTimeout(checkLocalStorage, 1000);
 			}
 		}
 
