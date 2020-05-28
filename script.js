@@ -3,6 +3,7 @@ const todoInput = document.getElementById('new-todo-input');
 const footer = document.getElementById('footer');
 const submitTodo = document.getElementById('submit-todo');
 const todos = document.getElementById('todos');
+const close = document.getElementById('close');
 
 let todosData = JSON.parse(localStorage.getItem('todoSideTodos'));
 
@@ -109,6 +110,11 @@ todos.addEventListener('click', (e) => {
 			el.remove();
 		}, 300);
 	}
+});
+
+// Close input modal when close button is clicked
+close.addEventListener('click', () => {
+	todoInput.classList.remove('show');
 });
 
 // Close the input modal if anywhere else on the screen is clicked
