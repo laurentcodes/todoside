@@ -302,4 +302,17 @@ body {
 		opacity: 1;
 		right: 5px;
 	}
+
+	.new-todo {
+		width: 100%;
+	}
+
+	.new-todo input {
+		width: 90%;
+	}
+
+	.new-todo i {
+		top: 25px;
+		left: 87%;
+	}
 }
