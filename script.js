@@ -3,12 +3,14 @@ const todoInput = document.getElementById('new-todo-input');
 const footer = document.getElementById('footer');
 const submitTodo = document.getElementById('submit-todo');
 const todos = document.getElementById('todos');
+const close = document.getElementById('close');
 
 let todosData = JSON.parse(localStorage.getItem('todoSideTodos'));
 
 // Check if there's data in the localstorage and display if there is
 function checkLocalStorage() {
 	if ('todoSideTodos' in localStorage) {
+		localStorage.removeItem('todoSideTodos');
 		updateDOM(todosData);
 	} else {
 		// If no data, display dummy data/welcome page
@@ -97,8 +99,6 @@ todos.addEventListener('click', (e) => {
 			if (todosData[i] === el.innerText) {
 				todosData.splice(i, 1);
 
-				console.log(todosData);
-
 				// Update local storage
 				localStorage.removeItem('todoSideTodos');
 				localStorage.setItem('todoSideTodos', JSON.stringify(todosData));
@@ -110,6 +110,11 @@ todos.addEventListener('click', (e) => {
 			el.remove();
 		}, 300);
 	}
+});
+
+// Close input modal when close button is clicked
+close.addEventListener('click', () => {
+	todoInput.classList.remove('show');
 });
 
 // Close the input modal if anywhere else on the screen is clicked
