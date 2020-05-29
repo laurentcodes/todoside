@@ -19,6 +19,7 @@ dummyData = [
 function checkLocalStorage() {
 	if ('todoSideTodos' in localStorage) {
 		if (todosData.length > 0) {
+			// Update DOM with todo data
 			updateDOM(todosData);
 		} else {
 			// Update DOM with dummy data
