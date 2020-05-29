@@ -207,7 +207,7 @@ function toggleCompleted(e, data) {
 						e.target.classList.toggle('completed');
 						data[i].completed = true;
 
-						updateLocalStorage();
+						updateLocalStorage(); 
 					}
 				}
 			}
