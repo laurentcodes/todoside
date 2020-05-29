@@ -45,7 +45,11 @@ function updateDOM(data) {
         ${el.todo}
         <i class="fas fa-trash-alt" id="delete"></i>
       </li>
-    `;
+		`;
+
+		if (el.id === 'undefined') {
+			el.id = generateID();
+		}
 
 		addtoDOM(todo);
 	});
@@ -62,8 +66,6 @@ submitTodo.addEventListener('click', (e) => {
 	let todoItem = parent.children[2].value;
 
 	const todoSingle = new Todo(todoItem, false);
-
-	console.log(todoSingle.id);
 
 	const todo = `
   <li>
