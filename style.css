@@ -185,7 +185,7 @@ body {
 }
 
 .new-todo.show {
-	transform: translate(-50%, -0);
+	transform: translate(-50%, 0);
 }
 
 .new-todo textarea {

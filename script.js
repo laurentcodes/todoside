@@ -153,25 +153,7 @@ document.addEventListener('mouseup', (e) => {
 	}
 });
 
-checkLocalStorage();
-
-function Todo(todo, completed = false, id = generateID()) {
-	this.todo = todo;
-	this.completed = completed;
-	this.id = id;
-}
-
-// Generate ID
-function generateID() {
-	return 'ts-' + Math.random().toString(36).substr(2, 16);
-}
-
-function updateLocalStorage() {
-	localStorage.removeItem('todoSideTodos');
-	localStorage.setItem('todoSideTodos', JSON.stringify(todosData));
-	setTimeout(checkLocalStorage, 1000);
-}
-
+// Toggle Completed Class
 function toggleCompleted(e, data) {
 	if (data === dummyData) {
 		if (e.target && e.target.matches('li')) {
@@ -215,6 +197,25 @@ function toggleCompleted(e, data) {
 	}
 }
 
+// Generate ID
+function generateID() {
+	return 'ts-' + Math.random().toString(36).substr(2, 16);
+}
+
+// Todo Object Constructor
+function Todo(todo, completed = false, id = generateID()) {
+	this.todo = todo;
+	this.completed = completed;
+	this.id = id;
+}
+
+// Update Local Storage
+function updateLocalStorage() {
+	localStorage.removeItem('todoSideTodos');
+	localStorage.setItem('todoSideTodos', JSON.stringify(todosData));
+	setTimeout(checkLocalStorage, 1000);
+}
+
 // Open Modal
 info.addEventListener('click', () => {
 	modal.classList.add('show-modal');
@@ -224,3 +225,5 @@ info.addEventListener('click', () => {
 modalClose.addEventListener('click', () => {
 	modal.classList.remove('show-modal');
 });
+
+checkLocalStorage();
