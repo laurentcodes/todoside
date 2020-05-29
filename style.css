@@ -32,8 +32,8 @@ body {
 
 .container > i {
 	position: absolute;
-	top: 15px;
-	right: 15px;
+	top: 20px;
+	right: 30px;
 	cursor: pointer;
 	transition: color 0.3s ease-in;
 }
