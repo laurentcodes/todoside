@@ -41,7 +41,7 @@ function updateDOM(data) {
 	todos.innerHTML = '';
 	data.forEach((el) => {
 		const todo = `
-      <li class="${el.completed ? 'completed' : ''}">
+      <li id="${el.id}" class="${el.completed ? 'completed' : ''}">
         ${el.todo}
         <i class="fas fa-trash-alt" id="delete"></i>
       </li>
@@ -63,7 +63,7 @@ submitTodo.addEventListener('click', (e) => {
 
 	const todoSingle = new Todo(todoItem, false);
 
-	console.log(todoSingle);
+	console.log(todoSingle.id);
 
 	const todo = `
   <li>
@@ -112,7 +112,7 @@ todos.addEventListener('click', (e) => {
 
 		// Check if element selected is in the array and delete if found
 		for (let i = 0; i < todosData.length; i++) {
-			if (todosData[i].todo === el.innerText) {
+			if (todosData[i].id === el.id) {
 				todosData.splice(i, 1);
 
 				// Update local storage
@@ -141,9 +141,15 @@ document.addEventListener('mouseup', (e) => {
 
 checkLocalStorage();
 
-function Todo(todo, completed = false) {
+function Todo(todo, completed = false, id = generateID()) {
 	this.todo = todo;
 	this.completed = completed;
+	this.id = id;
+}
+
+// Generate ID
+function generateID() {
+	return 'ts-' + Math.random().toString(36).substr(2, 16);
 }
 
 function updateLocalStorage() {
