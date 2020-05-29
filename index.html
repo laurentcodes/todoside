@@ -4,18 +4,23 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="A Todo App by Laurent" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="theme-color" content="#f8f5e6">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="/assets/favicon-96x96.png"></link>
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
 			integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
 			crossorigin="anonymous"
 		/>
+		<link rel="manifest" href="manifest.json" />
 		<link rel="stylesheet" href="style.css" />
 		<title>TodoSide</title>
 	</head>
 	<body>
 		<div class="container">
+			<i class="fas fa-info" id="info"></i>
 			<div class="link">
 				<a href="https://github.com/laurentcodes/todoside" target="_blank"
 					><i class="fab fa-github"></i
@@ -42,39 +47,38 @@
 						<h3>New Todo</h3>
 					</div>
 
-					<ul id="todos">
-						<!-- <li>
-							Welcome to TodoSide. 📝
-							<i class="fas fa-trash-alt" id="delete"></i>
-						</li>
-						<li>
-							Click New Todo to add a new Todo. ➕
-							<i class="fas fa-trash-alt" id="delete"></i>
-						</li>
-						<li>
-							Hover on a todo to show the delete button. 🚮
-							<i class="fas fa-trash-alt" id="delete"></i>
-						</li>
-						<li>
-							Click on a button to mark it as completed. ✅
-							<i class="fas fa-trash-alt" id="delete"></i>
-						</li> -->
-					</ul>
+					<ul id="todos"></ul>
 				</div>
 			</div>
 
-			<div class="new-todo" id="new-todo-input">
-				<input type="text" placeholder="Enter Todo here" />
-				<i class="fas fa-arrow-alt-circle-right" id="submit-todo"></i>
+			<div id="new-todo-input" class="new-todo">
+				<div id="close" class="close">X</div>
+				<h3>Add New Todo</h3>
+				<textarea id="text" placeholder="Enter to-do 📝..."></textarea>
+				<button class="btn" id="submit-todo">Add Todo</button>
 			</div>
-
-			<!-- <footer class="footer" id="footer">
-				<p>
-					TodoSide - 2020, made with ♥ by
-					<a href="https://laurentcodes.xyz" target="blank">Laurent</a>
-				</p>
-			</footer> -->
 		</div>
+		
+		<!-- Modal -->
+		<div class="modal-container" id="modal">
+			<button class="close-btn" id="closeModal">
+				<i class="fa fa-times"></i>
+			</button>
+
+			<div class="modal">
+				<div class="modal-content">
+					<h3>TodoSide</h3>
+					<h2>Developed by Laurent</h2>
+					<p>
+						This is a Todo Application
+					</p>
+
+					<h3>v1.0</h3>
+				</div>
+			</div>
+		</div>
+
+		<script src="app.js"></script>
 		<script src="script.js"></script>
 	</body>
 </html>
