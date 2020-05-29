@@ -12,10 +12,22 @@ let todosData = JSON.parse(localStorage.getItem('todoSideTodos'));
 
 // Dummy data
 dummyData = [
-	{ todo: 'Welcome to TodoSide. 📝', completed: false },
-	{ todo: 'Click New Todo to add a new Todo. ➕', completed: false },
-	{ todo: 'Hover on a todo to show the delete button. 🚮', completed: false },
-	{ todo: 'Click on an item to mark it as completed. ✅', completed: true },
+	{ todo: 'Welcome to TodoSide. 📝', completed: false, id: generateID() },
+	{
+		todo: 'Click New Todo to add a new Todo. ➕',
+		completed: false,
+		id: generateID(),
+	},
+	{
+		todo: 'Hover on a todo to show the delete button. 🚮',
+		completed: false,
+		id: generateID(),
+	},
+	{
+		todo: 'Click on an item to mark it as completed. ✅',
+		completed: true,
+		id: generateID(),
+	},
 ];
 
 // Check if there's data in the localstorage and display if there is
@@ -165,7 +177,7 @@ function toggleCompleted(e, data) {
 		if (e.target && e.target.matches('li')) {
 			// Loop through storage
 			for (i = 0; i < data.length; i++) {
-				if (data[i].todo === e.target.innerText) {
+				if (data[i].id === e.target.id) {
 					let completed = data[i].completed;
 					// console.log(e.target, completed);
 					if (completed) {
@@ -183,7 +195,7 @@ function toggleCompleted(e, data) {
 		if (e.target && e.target.matches('li')) {
 			// Loop through storage
 			for (i = 0; i < data.length; i++) {
-				if (data[i].todo === e.target.innerText) {
+				if (data[i].id === e.target.id) {
 					let completed = data[i].completed;
 					// console.log(e.target, completed);
 					if (completed) {
