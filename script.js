@@ -4,6 +4,9 @@ const footer = document.getElementById('footer');
 const submitTodo = document.getElementById('submit-todo');
 const todos = document.getElementById('todos');
 const close = document.getElementById('close');
+const info = document.getElementById('info');
+const modal = document.getElementById('modal');
+const modalClose = document.getElementById('closeModal');
 
 let todosData = JSON.parse(localStorage.getItem('todoSideTodos'));
 
@@ -191,3 +194,13 @@ function toggleCompleted(e, data) {
 		}
 	}
 }
+
+// Open Modal
+info.addEventListener('click', () => {
+	modal.classList.add('show-modal');
+});
+
+// Close Modal
+modalClose.addEventListener('click', () => {
+	modal.classList.remove('show-modal');
+});
