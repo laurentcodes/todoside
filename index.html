@@ -20,6 +20,7 @@
 	</head>
 	<body>
 		<div class="container">
+			<i class="fas fa-info" id="info"></i>
 			<div class="link">
 				<a href="https://github.com/laurentcodes/todoside" target="_blank"
 					><i class="fab fa-github"></i
@@ -46,24 +47,7 @@
 						<h3>New Todo</h3>
 					</div>
 
-					<ul id="todos">
-						<!-- <li>
-							Welcome to TodoSide. 📝
-							<i class="fas fa-trash-alt" id="delete"></i>
-						</li>
-						<li>
-							Click New Todo to add a new Todo. ➕
-							<i class="fas fa-trash-alt" id="delete"></i>
-						</li>
-						<li>
-							Hover on a todo to show the delete button. 🚮
-							<i class="fas fa-trash-alt" id="delete"></i>
-						</li>
-						<li>
-							Click on a button to mark it as completed. ✅
-							<i class="fas fa-trash-alt" id="delete"></i>
-						</li> -->
-					</ul>
+					<ul id="todos"></ul>
 				</div>
 			</div>
 
@@ -75,6 +59,25 @@
 			</div>
 		</div>
 		
+		<!-- Modal -->
+		<div class="modal-container" id="modal">
+			<button class="close-btn" id="closeModal">
+				<i class="fa fa-times"></i>
+			</button>
+
+			<div class="modal">
+				<div class="modal-content">
+					<h3>TodoSide</h3>
+					<h2>Developed by Laurent</h2>
+					<p>
+						This is a Todo Application
+					</p>
+
+					<h3>v1.0</h3>
+				</div>
+			</div>
+		</div>
+
 		<script src="app.js"></script>
 		<script src="script.js"></script>
 	</body>

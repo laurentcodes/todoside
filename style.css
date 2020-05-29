@@ -30,6 +30,18 @@ body {
 	width: 100%;
 }
 
+.container > i {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	cursor: pointer;
+	transition: color 0.3s ease-in;
+}
+
+.container > i:hover {
+	color: var(--tertiary-color);
+}
+
 .container .logo-text {
 	text-align: center;
 	color: var(--secondary-color);
@@ -158,52 +170,6 @@ body {
 	color: var(--primary-color);
 }
 
-/* .new-todo {
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	bottom: 0;
-	opacity: 0;
-	width: 50%;
-	height: 60px;
-	padding-top: 5px;
-	background-color: var(--secondary-mutated-color);
-	transition: all 0.3s ease-in-out;
-}
-
-.new-todo.show {
-	bottom: 0;
-	opacity: 1;
-	transform: translateY(-0px);
-}
-
-.new-todo input {
-	padding: 10px;
-	width: 80%;
-	border: 2px solid var(--secondary-color);
-	transition: border 0.3s ease-in-out;
-}
-
-.new-todo input:focus {
-	outline: 0;
-	border: 2px solid var(--tertiary-color);
-}
-
-.new-todo i {
-	cursor: pointer;
-	position: absolute;
-	font-size: 20px;
-	top: 25px;
-	left: 84%;
-	transition: color 0.3s ease;
-}
-
-.new-todo i:hover {
-	color: var(--tertiary-color);
-} */
-
 .new-todo {
 	width: 70%;
 	position: absolute;
@@ -248,6 +214,75 @@ body {
 	float: right;
 	text-align: right;
 	cursor: pointer;
+}
+
+.modal-container {
+	background-color: rgba(52, 55, 73, 1);
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.modal-container.show-modal {
+	display: block;
+}
+
+.modal {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	overflow: hidden;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
+	/* text-align: center; */
+	background-color: var(--primary-color);
+
+	animation-name: modalopen;
+	animation-duration: 1s;
+}
+
+.modal-content {
+	padding: 20px;
+	color: var(--secondary-color);
+}
+
+.close-btn {
+	background: transparent;
+	font-size: 25px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	padding: 30px;
+	cursor: pointer;
+	outline: none;
+	z-index: 10;
+}
+
+.close-btn i {
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	padding: 8px;
+	font-size: 20px;
+}
+
+@keyframes modalopen {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
 @media (max-width: 700px) and (min-width: 400px) {
