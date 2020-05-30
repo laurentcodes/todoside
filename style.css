@@ -165,7 +165,7 @@ body {
 	color: var(--primary-color);
 	padding: 20px;
 	border-radius: 5px;
-	transition: all 1s ease-in-out;
+	transition: all 0.5s ease-in-out;
 	text-align: center;
 	width: 50%;
 }
@@ -182,6 +182,16 @@ body {
 	margin: 15px 0;
 	width: 100%;
 	height: 150px;
+
+	transition: all 0.3s ease-in;
+}
+
+.new-todo textarea:focus {
+	outline: 0;
+}
+
+.new-todo textarea.error {
+	border: 1.6px solid #e74c3c;
 }
 
 .new-todo .btn {
@@ -193,6 +203,16 @@ body {
 	color: var(--primary-color);
 	font-size: 16px;
 	padding: 8px;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.new-todo .btn:hover {
+	background-color: var(--tertiary-color);
+}
+
+.new-todo .btn:focus {
+	outline: 0;
 }
 
 .new-todo .close {
@@ -321,10 +341,6 @@ body {
 		height: 40px;
 	}
 
-	.container .app .todos ul li {
-		font-size: 18px;
-	}
-
 	.container .app .todos ul li i {
 		opacity: 1;
 		right: 0;
@@ -353,6 +369,10 @@ body {
 		left: 60%;
 	}
 
+	.container .app .todos ul li {
+		margin-right: 25px;
+	}
+
 	.container .app .todos ul li i {
 		opacity: 1;
 		right: 5px;
@@ -379,6 +399,10 @@ body {
 
 	.container .app .todos .add-todo {
 		left: 60%;
+	}
+
+	.container .app .todos ul li {
+		margin-right: 25px;
 	}
 
 	.container .app .todos ul li i {
@@ -413,6 +437,20 @@ body {
 
 	.container .app .todos .add-todo h3 {
 		display: none;
+	}
+
+	.container .app .todos {
+		padding: 5px;
+	}
+
+	.container .app .todos ul {
+		opacity: 1;
+		margin-left: -14px;
+	}
+
+	.container .app .todos ul li {
+		font-size: 16px;
+		margin-right: 25px;
 	}
 
 	.container .app .todos ul li i {

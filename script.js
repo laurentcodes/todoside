@@ -19,13 +19,20 @@ dummyData = [
 		id: generateID(),
 	},
 	{
-		todo: 'Hover on a todo to show the delete button. 🚮',
+		todo:
+			'On Desktop Hover on a todo to show the delete button. 🚮 but Mobile Devices show it by default',
 		completed: false,
 		id: generateID(),
 	},
 	{
 		todo: 'Click on an item to mark it as completed. ✅',
 		completed: true,
+		id: generateID(),
+	},
+	{
+		todo:
+			'Enter Multiple Todos at onces by pressing the enter key after each Todo',
+		completed: false,
 		id: generateID(),
 	},
 ];
@@ -75,32 +82,43 @@ addTodo.addEventListener('click', () => {
 // Save todo to storage and display in DOM
 submitTodo.addEventListener('click', (e) => {
 	const parent = e.target.parentElement;
-	let todoItem = parent.children[2].value;
+	const todoItem = parent.children[2].value;
 
-	const todoSingle = new Todo(todoItem, false);
+	if (todoItem) {
+		let todoArray = [];
+		todoArray = todoItem.split('\n');
 
-	const todo = `
-  <li>
-    ${todoSingle.todo}
-    <i class="fas fa-trash-alt" id="delete"></i>
-  </li>
-  `;
+		todoArray.forEach((el) => {
+			const todoSingle = new Todo(el, false);
 
-	// Check if todosData array exists
-	todosData ? todosData : (todosData = []);
+			const todo = `
+				<li>
+					${todoSingle.todo}
+					<i class="fas fa-trash-alt" id="delete"></i>
+				</li>
+			`;
 
-	todosData.push(todoSingle);
+			// Check if todosData array exists
+			todosData ? todosData : (todosData = []);
 
-	localStorage.setItem('todoSideTodos', JSON.stringify(todosData));
-	addtoDOM(todo);
+			todosData.push(todoSingle);
 
-	todoInput.style.transition = 'all 0.3s ease-in-out;';
-	todoInput.classList.remove('show');
+			localStorage.setItem('todoSideTodos', JSON.stringify(todosData));
+			addtoDOM(todo);
+		});
 
-	parent.children[2].value = '';
+		todoInput.style.transition = 'all 0.3s ease-in-out;';
+		todoInput.classList.remove('show');
 
-	// Call checkLocalStorage function after adding new Data
-	setTimeout(checkLocalStorage, 1000);
+		parent.children[2].value = '';
+
+		// Call checkLocalStorage function after adding new Data
+		setTimeout(checkLocalStorage, 1000);
+	} else {
+		const textarea = parent.children[2];
+		textarea.classList.add('error');
+		textarea.placeholder = 'Please enter a Todo!';
+	}
 });
 
 // Adding new Element to DOm
@@ -189,7 +207,7 @@ function toggleCompleted(e, data) {
 						e.target.classList.toggle('completed');
 						data[i].completed = true;
 
-						updateLocalStorage(); 
+						updateLocalStorage();
 					}
 				}
 			}
