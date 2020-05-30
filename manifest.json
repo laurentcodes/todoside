@@ -7,8 +7,8 @@
 	"description": "A Todo App",
 	"theme_color": "#f8f5e6",
 	"orientation": "portrait-primary",
-	"start_url": "./",
-	"scope": "./",
+	"start_url": "/",
+	"scope": "/",
 	"icons": [
 		{
 			"src": "/assets/android-icon-36x36.png",
