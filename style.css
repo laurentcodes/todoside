@@ -59,7 +59,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	min-width: 70%;
+	min-width: 90%;
 }
 
 .container .app .todo-head {
@@ -135,7 +135,7 @@ body {
 }
 
 .container .app .todos ul li i:hover {
-	color: var(var(--tertiary-color));
+	color: var(--tertiary-color);
 }
 
 .container .app .todos ul li:hover i {
@@ -346,6 +346,10 @@ body {
 		right: 0;
 	}
 
+	.container .app .todos ul li i:hover {
+		color: var(--tertiary-color);
+	}
+
 	.new-todo {
 		width: 60%;
 	}
@@ -378,6 +382,10 @@ body {
 		right: 5px;
 	}
 
+	.container .app .todos ul li i:hover {
+		color: var(--tertiary-color);
+	}
+
 	.new-todo {
 		width: 60%;
 	}
@@ -408,6 +416,10 @@ body {
 	.container .app .todos ul li i {
 		opacity: 1;
 		right: 5px;
+	}
+
+	.container .app .todos ul li i:hover {
+		color: var(--tertiary-color);
 	}
 
 	.new-todo {
@@ -457,6 +469,10 @@ body {
 		opacity: 1;
 		right: 10px;
 		font-size: 18px;
+	}
+
+	.container .app .todos ul li i:hover {
+		color: var(--tertiary-color);
 	}
 
 	.new-todo {
