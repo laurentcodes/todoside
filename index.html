@@ -4,11 +4,15 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="A Todo App by Laurent" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="theme-color" content="#f8f5e6">
+		<meta
+			name="apple-mobile-web-app-status-bar-style"
+			content="black-translucent"
+		/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="theme-color" content="#f8f5e6" />
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="/assets/favicon-96x96.png"></link>
+		<link rel="apple-touch-icon" href="/assets/favicon-96x96.png" />
+
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
@@ -16,36 +20,70 @@
 			crossorigin="anonymous"
 		/>
 
-		<!-- Splash Screens -->
-		<link href="assets/splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-		<link href="assets/splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-		<link href="assets/splashscreens/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-		<link href="assets/splashscreens/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-		<link href="assets/splashscreens/iphonexr_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-		<link href="assets/splashscreens/iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-		<link href="assets/splashscreens/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-		<link href="assets/splashscreens/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-		<link href="assets/splashscreens/ipadpro3_splash.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-		<link href="assets/splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+		<!-- iPhone Xs Max (1242px x 2688px) -->
+		<link
+			rel="apple-touch-startup-image"
+			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
+			href="/assets/splashscreens/iphonexsmax_splash.png"
+		/>
+		<!-- iPhone Xr (828px x 1792px) -->
+		<link
+			rel="apple-touch-startup-image"
+			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
+			href="assets/splashscreens/iphonexr_splash.png"
+		/>
+		<!-- iPhone X, Xs (1125px x 2436px) -->
+		<link
+			rel="apple-touch-startup-image"
+			media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+			href="assets/splashscreens/iphonex_splash.png"
+		/>
+		<!-- iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus (1242px x 2208px) -->
+		<link
+			rel="apple-touch-startup-image"
+			media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)"
+			href="assets/splashscreens/iphoneplus_splash.png"
+		/>
+		<!-- iPhone 8, 7, 6s, 6 (750px x 1334px) -->
+		<link
+			rel="apple-touch-startup-image"
+			media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+			href="assets/splashscreens/iphone6_splash.png"
+		/>
+		<!-- iPad Pro 12.9" (2048px x 2732px) -->
+		<link
+			rel="apple-touch-startup-image"
+			media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
+			href="assets/splashscreens/ipadpro2_splash.png"
+		/>
+		<!-- iPad Pro 11” (1668px x 2388px) -->
+		<link
+			rel="apple-touch-startup-image"
+			media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)"
+			href="assets/splashscreens/ipadpro3_splash.png"
+		/>
+		<!-- iPad Pro 10.5" (1668px x 2224px) -->
+		<link
+			rel="apple-touch-startup-image"
+			media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)"
+			href="assets/splashscreens/ipadpro1_splash.png"
+		/>
+		<!-- iPad Mini, Air (1536px x 2048px) -->
+		<link
+			rel="apple-touch-startup-image"
+			media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
+			href="/splashscreens/ipad_splash.png"
+		/>
 
 		<link rel="manifest" href="manifest.json" />
 		<link rel="stylesheet" href="style.css" />
 		<title>TodoSide</title>
 	</head>
+
 	<body>
 		<div class="container">
 			<i class="fas fa-info" id="info"></i>
-			<div class="link">
-				<a href="https://github.com/laurentcodes/todoside" target="_blank"
-					><i class="fab fa-github"></i
-				></a>
-				<a href="https://twitter.com/laurentcodes" target="_blank"
-					><i class="fab fa-twitter"></i
-				></a>
-				<a href="https://www.instagram.com/laurentcodes/" target="_blank"
-					><i class="fab fa-instagram"></i
-				></a>
-			</div>
+
 			<div class="logo-text">
 				<h2>Todo <span>Side</span></h2>
 			</div>
@@ -72,7 +110,7 @@
 				<button class="btn" id="submit-todo">Add Todo</button>
 			</div>
 		</div>
-		
+
 		<!-- Modal -->
 		<div class="modal-container" id="modal">
 			<button class="close-btn" id="closeModal">
@@ -82,12 +120,27 @@
 			<div class="modal">
 				<div class="modal-content">
 					<h3>TodoSide</h3>
-					<h2>Developed by Laurent</h2>
+					<h2>
+						Developed by
+						<span><a href="https://laurentcodes.xyz">Laurent</a></span>
+					</h2>
 					<p>
 						This is a Todo Application
 					</p>
 
-					<h3>v1.0.6</h3>
+					<h3>v1.0.7</h3>
+
+					<div class="link">
+						<a href="https://github.com/laurentcodes/" target="_blank"
+							><i class="fab fa-github"></i
+						></a>
+						<a href="https://twitter.com/laurentcodes" target="_blank"
+							><i class="fab fa-twitter"></i
+						></a>
+						<a href="https://www.instagram.com/laurentcodes/" target="_blank"
+							><i class="fab fa-instagram"></i
+						></a>
+					</div>
 				</div>
 			</div>
 		</div>

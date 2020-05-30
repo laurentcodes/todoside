@@ -49,21 +49,6 @@ body {
 	font-size: 18px;
 }
 
-.container .link a {
-	text-decoration: none;
-	color: var(--secondary-color);
-	transition: color 0.3s ease-in-out;
-}
-
-.container .link a:hover {
-	color: var(--tertiary-color);
-}
-
-.container .link i {
-	font-size: 23px;
-	margin-right: 5px;
-}
-
 .container .logo-text span {
 	color: var(--tertiary-color);
 }
@@ -250,6 +235,35 @@ body {
 .modal-content {
 	padding: 20px;
 	color: var(--secondary-color);
+}
+
+.modal-content h2 > span a {
+	cursor: pointer;
+	text-decoration: none;
+	color: var(--secondary-mutated-color);
+	border-bottom: 1px solid var(--tertiary-color);
+}
+
+.modal .link {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.modal .link a {
+	text-decoration: none;
+	color: var(--secondary-color);
+	transition: color 0.3s ease-in-out;
+}
+
+.modal .link a:hover {
+	color: var(--tertiary-color);
+}
+
+.modal .link i {
+	font-size: 23px;
+	margin-right: 5px;
 }
 
 .close-btn {

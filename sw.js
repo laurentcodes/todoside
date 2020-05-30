@@ -1,9 +1,9 @@
-const dynamicCacheName = 'site-dynamic-v1.0.6';
+const dynamicCacheName = 'site-dynamic-v1.0.7';
 const assets = [
 	'/',
 	'/index.html',
 	'/assets/',
-	'/assets/style.css',
+	'/assets/splashscreens',
 	'/script.js',
 	'https://fonts.googleapis.com/css2?family=Rubik&display=swap',
 ];
