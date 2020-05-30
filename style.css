@@ -455,7 +455,8 @@ body {
 
 	.container .app .todos ul li i {
 		opacity: 1;
-		right: 5px;
+		right: 10px;
+		font-size: 18px;
 	}
 
 	.new-todo {
