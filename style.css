@@ -43,7 +43,7 @@ body {
 }
 
 .container .logo-text {
-	margin-top: -35px;
+	margin-top: -30px;
 	text-align: center;
 	color: var(--secondary-color);
 	letter-spacing: 1px;
