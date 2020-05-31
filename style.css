@@ -105,16 +105,19 @@ body {
 }
 
 .container .app .todos ul {
-	position: relative;
+	/* position: relative; */
 	padding: 10px;
 }
 
 .container .app .todos ul li {
+	position: relative;
 	cursor: pointer;
 	margin-bottom: 20px;
 	list-style: none;
 	font-size: 20px;
 	margin-left: 20px;
+	/* margin-right: 20px; */
+	padding: 2px 0 0 16px;
 
 	opacity: 1;
 	-webkit-transition: opacity 1000ms linear;
@@ -126,9 +129,86 @@ body {
 	color: var(--completed-color);
 }
 
+.container .app .todos ul li input[type='checkbox'] {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.container .app .todos ul li .checkbox-label .checkbox-custom {
+	position: absolute;
+	top: 0;
+	left: -10px;
+	height: 20px;
+	width: 20px;
+	background-color: transparent;
+	border-radius: 5px;
+	border: 2px solid var(--tertiary-color);
+
+	transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+}
+
+.container .app .todos ul li .checkbox-label .checkbox-custom::after {
+	position: absolute;
+	content: '';
+	left: 12px;
+	top: 12px;
+	height: 0px;
+	width: 0px;
+	border-radius: 5px;
+	border: solid var(--secondary-color);
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(0deg) scale(0);
+	-ms-transform: rotate(0deg) scale(0);
+	transform: rotate(0deg) scale(0);
+	opacity: 1;
+
+	transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+}
+
+.container .app .todos ul li .checkbox-label input:checked ~ .checkbox-custom {
+	background-color: var(--primary-color);
+	border-radius: 5px;
+	-webkit-transform: rotate(0deg) scale(1);
+	-ms-transform: rotate(0deg) scale(1);
+	transform: rotate(0deg) scale(1);
+	opacity: 1;
+	border: 2px solid var(--primary-color);
+}
+
+.container
+	.app
+	.todos
+	ul
+	li
+	.checkbox-label
+	input:checked
+	~ .checkbox-custom::after {
+	-webkit-transform: rotate(45deg) scale(1);
+	-ms-transform: rotate(45deg) scale(1);
+	transform: rotate(45deg) scale(1);
+	opacity: 1;
+	left: 6px;
+	top: 2px;
+	width: 4px;
+	height: 9px;
+	border: solid var(--secondary-color);
+	border-width: 0 2px 2px 0;
+	background-color: transparent;
+	border-radius: 0;
+}
+
 .container .app .todos ul li i {
 	position: absolute;
-	right: 20px;
+	right: 10px;
 	cursor: pointer;
 	opacity: 0;
 	transition: all 0.3s ease;
@@ -374,7 +454,7 @@ body {
 	}
 
 	.container .app .todos ul li {
-		margin-right: 25px;
+		margin-right: -8px;
 	}
 
 	.container .app .todos ul li i {
@@ -410,7 +490,7 @@ body {
 	}
 
 	.container .app .todos ul li {
-		margin-right: 25px;
+		margin-right: -8px;
 	}
 
 	.container .app .todos ul li i {
@@ -462,7 +542,7 @@ body {
 
 	.container .app .todos ul li {
 		font-size: 16px;
-		margin-right: 25px;
+		margin-right: -10px;
 	}
 
 	.container .app .todos ul li i {

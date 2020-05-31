@@ -3,6 +3,7 @@ const todoInput = document.getElementById('new-todo-input');
 const footer = document.getElementById('footer');
 const submitTodo = document.getElementById('submit-todo');
 const todos = document.getElementById('todos');
+const checkbox = document.getElementById('completedCheck');
 const close = document.getElementById('close');
 const info = document.getElementById('info');
 const modal = document.getElementById('modal');
@@ -25,7 +26,7 @@ dummyData = [
 		id: generateID(),
 	},
 	{
-		todo: 'Click on an item to mark it as completed. ✅',
+		todo: 'Click on the check button to mark an item as completed. ✅',
 		completed: true,
 		id: generateID(),
 	},
@@ -59,8 +60,22 @@ function checkLocalStorage() {
 function updateDOM(data) {
 	todos.innerHTML = '';
 	data.forEach((el) => {
+		let checked;
+
+		if (el.completed) {
+			checked = true;
+			// return checked;
+		} else {
+			checked = false;
+			// return checked;
+		}
+
 		const todo = `
-      <li id="${el.id}" class="${el.completed ? 'completed' : ''}">
+			<li id="${el.id}" class="${el.completed ? 'completed' : ''}">
+			<label class='checkbox-label'>
+				<input type='checkbox' id='completedCheck' ${checked ? 'checked' : ''}/>
+				<span class='checkbox-custom'></span>
+			</label>
         ${el.todo}
         <i class="fas fa-trash-alt" id="delete"></i>
       </li>
@@ -93,6 +108,7 @@ submitTodo.addEventListener('click', (e) => {
 
 			const todo = `
 				<li>
+				<input type='checkbox' />
 					${todoSingle.todo}
 					<i class="fas fa-trash-alt" id="delete"></i>
 				</li>
@@ -173,18 +189,21 @@ document.addEventListener('mouseup', (e) => {
 
 // Toggle Completed Class
 function toggleCompleted(e, data) {
+	// console.log(e.target.parentElement);
+	const todoCheck = e.target.parentElement.parentElement;
 	if (data === dummyData) {
-		if (e.target && e.target.matches('li')) {
+		if (e.target && e.target.matches('input')) {
 			// Loop through storage
 			for (i = 0; i < data.length; i++) {
-				if (data[i].id === e.target.id) {
+				// console.log(todoCheck);
+				if (data[i].id === todoCheck.id) {
 					let completed = data[i].completed;
 					// console.log(e.target, completed);
 					if (completed) {
-						e.target.classList.toggle('completed');
+						todoCheck.classList.toggle('completed');
 						data[i].completed = false;
 					} else {
-						e.target.classList.toggle('completed');
+						todoCheck.classList.toggle('completed');
 						data[i].completed = true;
 					}
 				}
@@ -192,19 +211,19 @@ function toggleCompleted(e, data) {
 		}
 	} else if (data === todosData) {
 		// If the list item is clicked
-		if (e.target && e.target.matches('li')) {
+		if (e.target && e.target.matches('input')) {
 			// Loop through storage
 			for (i = 0; i < data.length; i++) {
-				if (data[i].id === e.target.id) {
+				if (data[i].id === todoCheck.id) {
 					let completed = data[i].completed;
 					// console.log(e.target, completed);
 					if (completed) {
-						e.target.classList.toggle('completed');
+						todoCheck.classList.toggle('completed');
 						data[i].completed = false;
 
 						updateLocalStorage();
 					} else {
-						e.target.classList.toggle('completed');
+						todoCheck.classList.toggle('completed');
 						data[i].completed = true;
 
 						updateLocalStorage();
