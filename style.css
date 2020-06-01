@@ -1,33 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--primary-color: #171d4b;
-		--secondary-color: #5c93c4;
-		--tertiary-color: #2ed3c6;
-		--completed-color: #bedafa;
-		--secondary-mutated-color: #38428bd3;
-	}
+:root {
+	--primary-color: #f8f5e6;
+	--secondary-color: #171d4b;
+	--tertiary-color: #2ed3c6;
+	--completed-color: #b6b6b6;
+	--secondary-mutated-color: #38428bd3;
 }
 
-@media (prefers-color-scheme: light) {
-	:root {
-		--primary-color: #f8f5e6;
-		--secondary-color: #171d4b;
-		--tertiary-color: #2ed3c6;
-		--completed-color: #b6b6b6;
-		--secondary-mutated-color: #38428bd3;
-	}
-}
-
-@media (prefers-color-scheme: no-preference) {
-	:root {
-		--primary-color: #f8f5e6;
-		--secondary-color: #171d4b;
-		--tertiary-color: #2ed3c6;
-		--completed-color: #b6b6b6;
-		--secondary-mutated-color: #38428bd3;
-	}
+[data-theme='dark'] {
+	--primary-color: #171d4b;
+	--secondary-color: #5c93c4;
+	--tertiary-color: #2ed3c6;
+	--completed-color: #bedafa;
+	--secondary-mutated-color: #38428bd3;
 }
 
 * {
@@ -75,6 +61,77 @@ body {
 
 .container .logo-text span {
 	color: var(--tertiary-color);
+}
+
+/* .container .input {
+	position: absolute;
+	top: 10px;	
+	left: 15px;
+} */
+
+/* .container input {
+} */
+
+.theme-switch-wrapper {
+	position: absolute;
+	top: 10px;
+	left: 15px;
+}
+
+.theme-switch-wrapper em {
+	position: absolute;
+	margin-left: 10px;
+	/* font-size: 1rem; */
+	color: var(--secondary-color);
+}
+
+.theme-switch {
+	display: inline-block;
+	height: 30px;
+	position: relative;
+	width: 65px;
+}
+
+.theme-switch input {
+	display: none;
+}
+
+.slider {
+	background-color: var(--secondary-color);
+	bottom: 0;
+	cursor: pointer;
+	left: 5px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: 0.4s;
+}
+
+.slider:before {
+	background-color: var(--primary-color);
+	bottom: 6px;
+	content: '';
+	height: 18px;
+	left: 9px;
+	position: absolute;
+	transition: 0.4s;
+	width: 18px;
+}
+
+input:checked + .slider {
+	background-color: var(--secondary-color);
+}
+
+input:checked + .slider:before {
+	transform: translateX(26px);
+}
+
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
 }
 
 .container .app {

@@ -8,15 +8,35 @@ const close = document.getElementById('close');
 const info = document.getElementById('info');
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('closeModal');
-// const switchBox = document.getElementById('switch');
+const toggleSwitch = document.querySelector(
+	'.theme-switch input[type="checkbox"]'
+);
 
-// switchBox.addEventListener('change', () => {
-// 	if (switchBox.checked) {
-// 		console.log(document);
-// 	} else {
-// 	}
-// 	console.log(switchBox.checked);
-// });
+// Check if Current theme is saved in local storage
+const currentTheme = localStorage.getItem('todoSideTheme')
+	? localStorage.getItem('todoSideTheme')
+	: null;
+
+// If current theme is saved
+if (currentTheme) {
+	// Set the theme accordingly
+	document.documentElement.setAttribute('data-theme', currentTheme);
+
+	if (currentTheme === 'dark') {
+		toggleSwitch.checked = true;
+	}
+}
+
+// Switch theme
+function switchTheme(e) {
+	if (e.target.checked) {
+		document.documentElement.setAttribute('data-theme', 'dark');
+		localStorage.setItem('todoSideTheme', 'dark');
+	} else {
+		document.documentElement.setAttribute('data-theme', 'light');
+		localStorage.setItem('todoSideTheme', 'light');
+	}
+}
 
 let todosData = JSON.parse(localStorage.getItem('todoSideTodos'));
 
@@ -195,6 +215,9 @@ document.addEventListener('mouseup', (e) => {
 		todoInput.classList.remove('show');
 	}
 });
+
+// Toggle Switch
+toggleSwitch.addEventListener('change', switchTheme, false);
 
 // Toggle Completed Class
 function toggleCompleted(e, data) {
