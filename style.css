@@ -20,6 +20,16 @@
 	}
 }
 
+@media (prefers-color-scheme: no-preference) {
+	:root {
+		--primary-color: #f8f5e6;
+		--secondary-color: #171d4b;
+		--tertiary-color: #2ed3c6;
+		--completed-color: #b6b6b6;
+		--secondary-mutated-color: #38428bd3;
+	}
+}
+
 * {
 	box-sizing: border-box;
 }
