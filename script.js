@@ -93,10 +93,8 @@ function updateDOM(data) {
 
 		if (el.completed) {
 			checked = true;
-			// return checked;
 		} else {
 			checked = false;
-			// return checked;
 		}
 
 		const todo = `

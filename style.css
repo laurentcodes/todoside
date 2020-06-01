@@ -63,25 +63,15 @@ body {
 	color: var(--tertiary-color);
 }
 
-/* .container .input {
-	position: absolute;
-	top: 10px;	
-	left: 15px;
-} */
-
-/* .container input {
-} */
-
 .theme-switch-wrapper {
 	position: absolute;
-	top: 10px;
+	top: 15px;
 	left: 15px;
 }
 
 .theme-switch-wrapper em {
 	position: absolute;
 	margin-left: 10px;
-	/* font-size: 1rem; */
 	color: var(--secondary-color);
 }
 
