@@ -8,6 +8,15 @@ const close = document.getElementById('close');
 const info = document.getElementById('info');
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('closeModal');
+// const switchBox = document.getElementById('switch');
+
+// switchBox.addEventListener('change', () => {
+// 	if (switchBox.checked) {
+// 		console.log(document);
+// 	} else {
+// 	}
+// 	console.log(switchBox.checked);
+// });
 
 let todosData = JSON.parse(localStorage.getItem('todoSideTodos'));
 
