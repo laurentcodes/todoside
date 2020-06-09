@@ -138,6 +138,12 @@ input:checked + .slider:before {
 	background-color: var(--secondary-color);
 }
 
+.container .app .todo-head .todo-count {
+	width: 80%;
+	height: 60px;
+	color: var(--primary-color);
+}
+
 .container .app .todo-head h2 {
 	text-align: center;
 	color: var(--primary-color);

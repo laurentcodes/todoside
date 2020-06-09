@@ -8,6 +8,7 @@ const close = document.getElementById('close');
 const info = document.getElementById('info');
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('closeModal');
+const todoCount = document.getElementById('todoCount');
 const toggleSwitch = document.querySelector(
 	'.theme-switch input[type="checkbox"]'
 );
@@ -147,6 +148,10 @@ submitTodo.addEventListener('click', (e) => {
 			todosData.push(todoSingle);
 
 			localStorage.setItem('todoSideTodos', JSON.stringify(todosData));
+
+			// Update todo Count
+			todoCountUpdate();
+
 			addtoDOM(todo);
 		});
 
@@ -189,6 +194,9 @@ todos.addEventListener('click', (e) => {
 		for (let i = 0; i < todosData.length; i++) {
 			if (todosData[i].id === el.id) {
 				todosData.splice(i, 1);
+
+				// Update Todo Count
+				todoCountUpdate();
 
 				// Update local storage
 				updateLocalStorage();
@@ -264,6 +272,21 @@ function toggleCompleted(e, data) {
 	}
 }
 
+// Todo Count
+function todoCountUpdate() {
+	if ('todoSideTodos' in localStorage) {
+		const count = todosData.length;
+		if (count === 1) {
+			todoCount.innerText = `- ${count} Todo`;
+		} else {
+			todoCount.innerText = `- ${count} Todos`;
+		}
+	} else {
+		todoCount.innerText = '- 0 Todos';
+		console.log(todosData);
+	}
+}
+
 // Generate ID
 function generateID() {
 	return 'ts-' + Math.random().toString(36).substr(2, 16);
@@ -294,3 +317,4 @@ modalClose.addEventListener('click', () => {
 });
 
 checkLocalStorage();
+todoCountUpdate();
